@@ -1,0 +1,50 @@
+<html>
+<body bgcolor="000">
+<center style="border:2px solid brown; padding :10px; color:#D35400"><h2>Share Preference Example</h3></center>
+<pre style="border:2px solid green; padding :10px; color:#fff">
+package com.example.niitandroid;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RelativeLayout;
+
+public class SharePreferenceEx extends Activity {
+	Button demosp;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+	super.onCreate(savedInstanceState);
+	setContentView(R.layout.activity_share_preference);
+	demosp = (Button) findViewById(R.id.sPreDemo);
+	demosp.setOnClickListener(new View.OnClickListener() {
+	@Override
+	public void onClick(View arg0) {
+
+	SharedPreferences sp = getSharedPreferences
+("MyPreference",MODE_PRIVATE);
+SharedPreferences.Editor e = sp.edit();
+e.putString("red","#DB7F7C");
+e.putString("blue","#5073A7");
+e.putString("brown","#A77450");
+e.putString("green","#51A750");
+e.putString("pink","#A7509F");
+e.putString("face","#F3EBAB");
+e.putString("black","#000000");
+e.putString("orange","#F07637");
+e.putString("gray","#BCB7B5");
+e.putString("white","#ffffff");
+e.commit();
+}
+  });
+     }
+	 }
+</pre>
+</body>
+</html>

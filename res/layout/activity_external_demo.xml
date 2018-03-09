@@ -1,0 +1,119 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#17a589"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="WELCOME!"
+                android:textColor="#fff"
+                android:textSize="30dp"
+                android:typeface="normal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:text="SAVE DATA TO EXTERNAL STORAGE"
+                android:textColor="#fff"
+                android:typeface="normal" />
+
+            <EditText
+                android:id="@+id/exname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:background="#fff"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Enter Name"
+                android:inputType="text"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:textColor="#000" >
+
+                <requestFocus />
+            </EditText>
+
+            <EditText
+                android:id="@+id/exdata"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:background="#fff"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Enter Data"
+                android:inputType="text"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:textColor="#000" />
+
+            <Button
+                android:id="@+id/exSavebtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:background="#82e0aa"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:text="Save Data"
+                android:textColor="#fff" />
+
+            <TextView
+                android:id="@+id/forgotlink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="50dp"
+                android:text=""
+                android:textColor="#fff"
+                android:typeface="normal" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:text="External Storage for Android Lover"
+            android:textColor="#17a589" />
+
+        <Button
+            android:id="@+id/exShowbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="15dp"
+            android:background="#17a589"
+            android:ems="6"
+            android:text="Show Data"
+            android:textColor="#fff" />
+    </RelativeLayout>
+
+</ScrollView>

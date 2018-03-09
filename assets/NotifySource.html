@@ -1,0 +1,23 @@
+<html>
+<body bgcolor="000">
+<center style="border:2px solid brown; padding :10px; color:#D35400"><h2>Notification Example</h3></center>
+<pre style="border:2px solid green; padding :10px; color:#fff">
+
+  NotificationCompat.Builder builder = new NotificationCompat.Builder(Notify.this);
+builder.setSmallIcon(R.drawable.n);
+builder.setContentTitle("Notification");
+builder.setContentText("This is an example of notification");
+
+Intent notificationIntent = new Intent(Notify.this, Notify.class);
+PendingIntent contentIntent = PendingIntent.getActivity(Notify.this, 0,
+notificationIntent,PendingIntent.FLAG_UPDATE_CURRENT);
+builder.setContentIntent(contentIntent);
+
+// Add as notification
+NotificationManager manager = (NotificationManager) 
+getSystemService(Context.NOTIFICATION_SERVICE);
+manager.notify(0, builder.build());
+
+</pre>
+</body>
+</html>

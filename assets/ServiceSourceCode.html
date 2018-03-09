@@ -1,0 +1,201 @@
+<html>
+<body bgcolor="000">
+<center style="border:2px solid brown; padding :10px; color:#D35400"><h2>Service Example</h2></center>
+
+<div style="border:2px solid orange; padding :5px; color:cyan"><h4>Start Service Example</h4>
+<pre style="border:2px solid green; padding:10px; color:#fff">
+
+package com.example.niitandroid;
+
+import android.app.Service;
+import android.content.Intent;
+import android.media.MediaPlayer;
+import android.os.IBinder;
+import android.widget.Toast;
+
+public class MySS extends Service {
+	
+	MediaPlayer mps;
+
+@Override
+	public IBinder onBind(Intent arg0) {
+		return null;
+	}
+
+@Override
+	public void onCreate() {
+	mps= MediaPlayer.create
+	(MySS.this,R.raw.sia);
+	
+	mps.setLooping(false);
+	
+	Toast.makeText(this, 
+	"[Start-Service] Created",
+	Toast.LENGTH_LONG).show();
+	}
+	
+	
+@Override
+	public int onStartCommand(
+	Intent intent,int flags, 
+	int startId) {
+	
+	mps.start();
+	
+	Toast.makeText(this,
+	"[Start-Service] Started",
+	Toast.LENGTH_LONG).show();
+	
+	return super.onStartCommand(
+	intent, flags, startId);
+	}
+	
+@Override
+	public boolean stopService(Intent name) {
+	
+	mps.stop();
+	
+	return super.stopService(name);
+	}
+	
+@Override
+	public void onDestroy() {
+	mps.stop();
+
+	Toast.makeText(this,
+	"[Start-Service] Stoped",
+	Toast.LENGTH_LONG).show();
+		}
+	}
+</pre>
+<h4>Bind Service Example</h4>
+<pre style="border:2px solid green; padding : 10px; color:#fff">
+package com.example.niitandroid;
+
+import android.app.Service;
+import android.content.Intent;
+import android.media.MediaPlayer;
+import android.os.Binder;
+import android.os.IBinder;
+import android.widget.Toast;
+
+public class MyBS extends Service {
+MediaPlayer mp;
+
+public class LocalBinder extends Binder {
+    MyBS getService() {
+    return MyBS.this;
+  }
+}
+
+@Override
+	public void onCreate() {
+	
+	Toast.makeText(this,
+	"[Bound-Service] Created",
+	Toast.LENGTH_LONG).show();
+	
+	mp= MediaPlayer.create(
+	MyBS.this,R.raw.closer);
+
+	mp.setLooping(false);	
+	  
+	super.onCreate();
+}
+
+
+@Override
+	public IBinder onBind(Intent arg0) {
+	
+	Toast.makeText(this,
+	"[Bound-Service] Started",
+	Toast.LENGTH_LONG).show();  
+	
+	mp.start();
+	
+	return null;
+	}
+
+@Override
+	public boolean onUnbind(Intent intent) {
+	
+	Toast.makeText(this,
+	"[Bind-Service] Stoped",
+	Toast.LENGTH_LONG).show();
+	
+	mp.stop();		 
+	
+	return super.onUnbind(intent);
+	}
+}
+</pre>
+<h4>Main Class as like <i>MainActivity.java</i></h4>
+<pre style="border:2px solid green; padding : 10px; color:#fff">
+package com.example.niitandroid;
+
+import android.app.Activity;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.Toast;
+
+import com.example.niitandroid.MyBS.LocalBinder;
+
+public class ServiceEx extends Activity {
+	Button start, bound;
+	MyBS obj1; 	---->//its bound class object.
+	
+@Override
+	protected void onCreate(Bundle savedInstanceState) {
+	super.onCreate(savedInstanceState);
+	setContentView(R.layout.activity_service_ex);
+	
+	start = (Button) findViewById(R.id.startServiceEX);
+	bound = (Button) findViewById(R.id.BoundService);
+
+	start.setOnClickListener(new View.OnClickListener() {
+@Override
+	public void onClick(View arg0) {
+		
+	Intent i = new Intent(ServiceEx.this,MySS.class);
+	startService(i);
+		}
+	});
+	
+	bound.setOnClickListener(new View.OnClickListener() {
+@Override
+	public void onClick(View arg0) {
+	Intent i = new Intent(ServiceEx.this, MyBS.class);
+	bindService(i, obj, Context.BIND_AUTO_CREATE);
+		}
+	});
+
+	ServiceConnection obj = new ServiceConnection() {
+@Override
+	public void onServiceDisconnected
+	(ComponentName arg0) {
+	
+	}
+
+@Override
+	public void onServiceConnected(
+	ComponentName arg0, IBinder arg1) {
+	
+	LocalBinder lb = (LocalBinder) arg1;
+	obj1 = lb.getService();
+		}
+	};
+
+	}
+}
+</pre>
+</div>
+
+</body>
+</html>

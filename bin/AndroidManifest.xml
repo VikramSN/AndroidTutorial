@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.niitandroid"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.niitandroid.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.ToastEx"
+            android:label="@string/title_activity_toast" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.ToastSourceCode"
+            android:label="@string/title_activity_toast_source_code" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.IntentEx"
+            android:label="@string/title_activity_intent_ex" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.ImplicitIntent"
+            android:label="@string/title_activity_implicit_intent" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.ExplicitIntent"
+            android:label="@string/title_activity_explicit_intent"
+            android:noHistory="true" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.ActivityB"
+            android:label="@string/title_activity_activity_b"
+            android:noHistory="true" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.IntentOutWeb"
+            android:label="@string/title_activity_intent_out_web" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.IntentInWeb"
+            android:label="@string/title_activity_intent_in_web" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.IntData"
+            android:label="@string/title_activity_int_data"
+            android:noHistory="true" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.InternalStorageEx"
+            android:label="@string/title_activity_internal_storage_ex" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.InterDemo"
+            android:label="@string/title_activity_inter_demo" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.InterSource"
+            android:label="@string/title_activity_inter_source" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.Introduction"
+            android:label="@string/title_activity_introduction" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.Installation"
+            android:label="@string/title_activity_installation" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.Emu"
+            android:label="@string/title_activity_emu" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.HelloWorld"
+            android:label="@string/title_activity_hello_world" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.HelloSource"
+            android:label="@string/title_activity_hello_source" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.ExternalStorageEx"
+            android:label="@string/title_activity_external_storage_ex" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.ExternalDemo"
+            android:label="@string/title_activity_external_demo" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.ExSource"
+            android:label="@string/title_activity_ex_source" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.SQLiteEx"
+            android:label="@string/title_activity_sqlite_ex" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.SqliteEx"
+            android:label="@string/title_activity_sqlite_ex" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.SqDemo"
+            android:label="@string/title_activity_sq_demo" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.SharePreferenceEx"
+            android:label="@string/title_activity_share_preference" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.SqliteSource"
+            android:label="@string/title_activity_sqlite_source" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.SpSource"
+            android:label="@string/title_activity_sp_source" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.ServiceEx"
+            android:label="@string/title_activity_service_ex" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.BoundService"
+            android:label="@string/title_activity_bound_service" >
+        </activity>
+
+        <service
+            android:name="com.example.niitandroid.MyBS"
+            android:enabled="true" >
+        </service>
+        <service
+            android:name="com.example.niitandroid.MySS"
+            android:enabled="true" >
+        </service>
+
+        <activity
+            android:name="com.example.niitandroid.ServiceSource"
+            android:label="@string/title_activity_service_source" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.Broadcast_Recever"
+            android:label="@string/title_activity_broadcast__recever" >
+        </activity>
+
+        <receiver android:name="com.example.niitandroid.MyBroadcast" >
+            <intent-filter>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+                <action android:name="android.net.wifi.STATE_CHANGE" />
+                <action android:name="android.net.wifi.NETWORK_IDS_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.example.niitandroid.BrSource"
+            android:label="@string/title_activity_br_source" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.Menus"
+            android:label="@string/title_activity_menus" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.Notify"
+            android:label="@string/title_activity_notify" >
+        </activity>
+        <activity
+            android:name="com.example.niitandroid.NotifySourceCode"
+            android:label="@string/title_activity_notify_source_code" >
+        </activity>
+    </application>
+
+</manifest>
